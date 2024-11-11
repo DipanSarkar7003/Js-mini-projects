@@ -11,6 +11,10 @@ console.log(clickables);
 
 clickables.forEach((element) => {
   element.addEventListener("click", (e) => {
-    display.value += e.target.value;
+    let key = e.target.value
+    if(key=="."){
+      if(display.value.includes(".")) retrun
+    }
+    display.value += key;
   });
 });
