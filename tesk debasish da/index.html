@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="inndex.css" />
+  </head>
+  <body>
+    <div class="calcWrapper">
+      <form class="calcContainer">
+        <input type="text" id="display" name="display" value="" readonly />
+        <div>
+          <div class="btn-row">
+            <input
+              type="button"
+              class="blue input-btn"
+              value="C"
+              onclick="display.value = '' "
+            />
+            <input
+              type="button"
+              class="blue input-btn"
+              value="Del"
+              onclick="display.value = display.value.toString().slice(0,-1) "
+            />
+            <input type="button" class="blue input-btn clickable" value="/" />
+            <input type="button" class="blue input-btn clickable" value="." />
+          </div>
+          <div class="btn-row">
+            <input type="button" class="input-btn clickable" value="7" />
+            <input type="button" class="input-btn clickable" value="8" />
+            <input type="button" class="input-btn clickable" value="9" />
+            <input type="button" class="input-btn clickable blue" value="*"  />
+          </div>
+          <div class="btn-row">
+            <input type="button" class="input-btn clickable" value="4" />
+            <input type="button" class="input-btn clickable" value="5" />
+            <input type="button" class="input-btn clickable" value="6" />
+            <input type="button" class="input-btn clickable blue" value="-" />
+          </div>
+          <div class="btn-row">
+            <input type="button" class="input-btn clickable" value="1" />
+            <input type="button" class="input-btn clickable" value="2" />
+            <input type="button" class="input-btn clickable" value="3" />
+            <input type="button" class="input-btn clickable blue" value="+" />
+          </div>
+          <div class="btn-row">
+            <input type="button" class="input-btn clickable" value="00" />
+            <input type="button" class="input-btn clickable" value="0" />
+            <input
+              type="button"
+              class="input-btn"
+              value="="
+              onclick="handleCalc(display.value)"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Attaching JS file  -->
+    <script src="index.js"></script>
+  </body>
+</html>
