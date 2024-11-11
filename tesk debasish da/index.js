@@ -8,12 +8,17 @@ function handleCalc(num) {
 
 const clickables = document.querySelectorAll(".clickable");
 console.log(clickables);
+let allowDot = true;
 
 clickables.forEach((element) => {
   element.addEventListener("click", (e) => {
-    let key = e.target.value
-    if(key=="."){
-      if(display.value.includes(".")) retrun
+    let key = e.target.value;
+    if (key == ".") {
+      if (!allowDot) return;
+      allowDot = false;
+    }
+    if (display.value.includes("+" || "-" || "*" || "/")) {
+      allowDot = true;
     }
     display.value += key;
   });
